@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="overflow-x: hidden;">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -117,7 +117,7 @@
           Ejims Logistics today and let us handle the rest.
         </p>
 
-        <form id="whatsapp-form" class="booking-form" action="https://wa.me/2347041454768" method="get" target="_blank">
+        <form id="whatsapp-form" class="booking-form">
           <label for="name">Your Name:</label>
           <input type="text" id="name" placeholder=" Your Name" required />
 
@@ -227,8 +227,7 @@
 *Package Details:* ${details || "N/A"}`;
 
     const phone = "2347041454768";
-    const whatsappLink = https://wa.me/${phone}?text=${message};
-
+    const whatsappLink = "https://wa.me/2347041454768?text=Hi%20Ejims%20Logistics%2C%20I%E2%80%99m%20interested%20in%20your%20pickup%20and%20delivery%20services.%20Can%20you%20assist%20me%3F";
     // Show success message
     const form = document.getElementById("whatsapp-form");
     const successMessage = document.createElement("p");

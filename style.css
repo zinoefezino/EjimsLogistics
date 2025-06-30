@@ -9,6 +9,8 @@ body {
   color: #ff5b19;
   font-family: "Poppins", sans-serif;
   text-size-adjust: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 header {
@@ -324,12 +326,12 @@ html,
 body {
   overflow-x: hidden;
 }
-
+/* 
 .booking-container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 1rem;
-}
+} */
 
 .booking {
   background-color: #eeeeee;
