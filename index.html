@@ -216,18 +216,16 @@
     e.preventDefault();
 
     const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
     const pickup = document.getElementById("pickup").value.trim();
     const delivery = document.getElementById("delivery").value.trim();
     const details = document.getElementById("details").value.trim();
 
-    const message = `🚚 *Ejims Logistics - New Booking*:%0A
-*Name:* ${name}%0A
-*Pickup Address:* ${pickup}%0A
-*Delivery Address:* ${delivery}%0A
-*Package Details:* ${details || "N/A"}`;
+    const message = 🚚 *Ejims Logistics - New Booking*:%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Pickup Address:* ${pickup}%0A*Delivery Address:* ${delivery}%0A*Package Details:* ${details || "N/A"};
 
-    const phone = "2347041454768";
-    const whatsappLink = "https://wa.me/2347041454768?text=Hi%20Ejims%20Logistics%2C%20I%E2%80%99m%20interested%20in%20your%20pickup%20and%20delivery%20services.%20Can%20you%20assist%20me%3F";
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappLink = https://wa.me/2347041454768?text=${encodedMessage};
+
     // Show success message
     const form = document.getElementById("whatsapp-form");
     const successMessage = document.createElement("p");
@@ -245,5 +243,6 @@
     }, 2000);
   });
 </script>
+    
   </body>
 </html>
