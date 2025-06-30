@@ -368,6 +368,7 @@ body {
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
+  padding: 20px;
 }
 
 .booking-form label {
@@ -379,12 +380,12 @@ body {
 .booking-form input,
 .booking-form textarea {
   padding: 12px 16px;
-  border: 1px solid #eeeeee;
   border-radius: 6px;
   font-family: inherit;
   font-size: 1rem;
   resize: none;
   font-family: inherit;
+  background-color: #eeeeee;
 }
 
 .booking-form button {
@@ -406,6 +407,12 @@ body {
 
 .booking-form button:hover {
   background-color: #e14d10;
+}
+
+.booking-form input:focus,
+.booking-form textarea:focus {
+  outline: none;
+  background-color: #eeeeee;
 }
 
 /* Responsive Styles */
