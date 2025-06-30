@@ -125,7 +125,12 @@
           <input type="tel" id="phone" placeholder=" Your Phone" required />
 
           <label for="phone">Drop off Number:</label>
-          <input type="tel" id="dropoff" placeholder=" Your Phone" required />
+          <input
+            type="tel"
+            id="dropoff"
+            placeholder=" Reciever's Phone Number"
+            required
+          />
 
           <label for="pickup">Pickup Location:</label>
           <input
@@ -242,23 +247,23 @@
           const name = document.getElementById("name").value.trim();
           const phone = document.getElementById("phone").value.trim();
           const pickup = document.getElementById("pickup").value.trim();
-          const dropoff = document.getElementById("dropoff").value.trim();
-          const delivery = document.getElementById("delivery").value.trim();
+          const dropoff = document.getElementById("dropoff").value.trim(); // New dropoff field
           const details = document.getElementById("details").value.trim();
           const selectedNumber =
             document.getElementById("whatsapp-number").value;
 
+          // Validate selection
           if (!selectedNumber) {
             alert("Please select a WhatsApp number");
             return;
           }
 
+          // Construct the message using template literals
           const message =
             "🚚 *Ejims Logistics - New Booking*\n" +
             "*Name:* ${name}\n" +
             "*Phone:* ${phone}\n" +
             "*Pickup:* ${pickup}\n" +
-            "*Delivery:* ${delivery}\n" +
             "*Dropoff:* ${dropoff}\n" +
             '*Details:* ${details || "N/A"}';
 
@@ -266,7 +271,10 @@
           const whatsappUrl =
             "https://wa.me/${selectedNumber}?text=${encodedMessage}";
 
-          // Show message and redirect
+          // Debug: Log the URL to ensure it's correct
+          console.log("WhatsApp URL:", whatsappUrl);
+
+          // Show success message and redirect
           const form = document.getElementById("whatsapp-form");
           const successMessage = document.createElement("p");
           successMessage.textContent =
@@ -283,9 +291,9 @@
           form.appendChild(successMessage);
 
           setTimeout(() => {
-            window.open(whatsappUrl, "_blank");
-            form.reset();
-            successMessage.remove();
+            window.open(whatsappUrl, "_blank"); // Open in new tab
+            form.reset(); // Clear the form
+            successMessage.remove(); // Remove success message
           }, 1500);
         });
     </script>
