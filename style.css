@@ -276,8 +276,10 @@ header {
 .footer {
   background-color: #000;
   color: #eeeeee;
-  padding: 40px 20px;
+  padding: 40px 0;
   text-align: center;
+  width: 100%;
+  margin: 0;
 }
 
 .footer h3 {
@@ -293,6 +295,9 @@ header {
 
 .contact-info {
   margin-bottom: 1.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .contact-info p {
@@ -320,6 +325,13 @@ header {
 
 .contact-info a:hover {
   opacity: 0.8;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #eeeeee;
+  margin: 15px auto;
+  width: 600px;
 }
 
 html,
