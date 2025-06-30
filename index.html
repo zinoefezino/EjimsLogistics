@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="overflow-x: hidden;">
+<html lang="en" style="overflow-x: hidden">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -125,17 +125,30 @@
           <input type="tel" id="phone" placeholder=" Your Phone" required />
 
           <label for="pickup">Pickup Location:</label>
-          <input type="text" id="pickup" placeholder="Pickup Address" required />
+          <input
+            type="text"
+            id="pickup"
+            placeholder="Pickup Address"
+            required
+          />
 
           <label for="delivery">Delivery Location:</label>
-          <input type="text" id="delivery" placeholder="Delivery Address" required />
+          <input
+            type="text"
+            id="delivery"
+            placeholder="Delivery Address"
+            required
+          />
 
-          <textarea id="details" placeholder="Package Details (optional) No contraband/Drugs"></textarea>
+          <textarea
+            id="details"
+            placeholder="Package Details (optional) No contraband/Drugs"
+          ></textarea>
 
           <button type="submit">Book Now</button>
-
         </form>
       </div>
+    </section>
 
     <section class="about" id="about">
       <div class="about-container">
@@ -164,7 +177,7 @@
 
     <section class="footer" id="contact">
       <h3>Contact <span>Ejims Logistics</span></h3>
-    
+
       <div class="contact-info">
         <p>
           <a href="tel:+2347041454768">
@@ -182,9 +195,9 @@
           </a>
         </p>
       </div>
-    
+
       <hr />
-    
+
       <p class="footer-note">
         &copy; 2025 Ejims Logistics. All rights reserved.
       </p>
@@ -211,25 +224,25 @@
     </script>
 
     <script>
-      document.getElementById("whatsapp-form").addEventListener("submit", function (event) {
-        event.preventDefault();
+      document
+        .getElementById("whatsapp-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
 
-        const name = document.getElementById("name").value;
-        const phone = document.getElementById("phone").value;
-        const pickup = document.getElementById("pickup").value;
-        const delivery = document.getElementById("delivery").value;
-        const details = document.getElementById("details").value;
+          const name = document.getElementById("name").value;
+          const phone = document.getElementById("phone").value;
+          const pickup = document.getElementById("pickup").value;
+          const delivery = document.getElementById("delivery").value;
+          const details = document.getElementById("details").value;
 
-        const whatsappMessage = `Hi Ejims Logistics, I want to book a delivery.\n\nName: ${name}\nPhone: ${phone}\nPickup: ${pickup}\nDelivery: ${delivery}\nDetails: ${details}`;
+          const whatsappMessage = `Hi Ejims Logistics, I want to book a delivery.\n\nName: ${name}\nPhone: ${phone}\nPickup: ${pickup}\nDelivery: ${delivery}\nDetails: ${details}`;
 
-        const whatsappUrl = `https://wa.me/2347041454768?text=${encodeURIComponent(whatsappMessage)}`;
-        
-        window.open(whatsappUrl, "_blank");
-      });
+          const whatsappUrl = `https://wa.me/2347041454768?text=${encodeURIComponent(
+            whatsappMessage
+          )}`;
 
+          window.open(whatsappUrl, "_blank");
+        });
     </script>
-       
-
-    
   </body>
 </html>
