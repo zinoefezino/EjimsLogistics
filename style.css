@@ -1,0 +1,404 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eeeeee;
+  color: #ff5b19;
+  font-family: "Poppins", sans-serif;
+  text-size-adjust: 100%;
+}
+
+header {
+  background-color: #ffffff;
+  color: #ff5b19;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  border: 3px solid #ffffff;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.logo img {
+  width: 110px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  color: #f5f5f5;
+}
+
+.nav-links ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  cursor: pointer;
+}
+
+/* General nav links */
+.nav-links ul li a:not(.contact-btn) {
+  color: #ff5b19;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect for non-contact links */
+.nav-links ul li a:not(.contact-btn)::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #ff732f;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.nav-links ul li a:not(.contact-btn):hover::after {
+  width: 100%;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.nav-links ul li a:not(.contact-btn):hover {
+  color: #ff732f;
+}
+
+.banner {
+  background-image: url("./images/maksym-tymchyk-jm70AzcV5AQ-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  color: #ffffff;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 1;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.banner h1 span {
+  color: #ff5b19;
+}
+
+.banner-content h1 {
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.banner-content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  background-color: #ff5b19;
+  color: #e3dedd;
+  border: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #e14d10;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-btn {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 2px solid #ff5b19;
+  text-decoration: none;
+  color: #ff5b19;
+  background-color: transparent;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease;
+}
+
+.contact-btn:hover {
+  background-color: #ff5b19;
+  color: #ffffff;
+  border-color: #ff5b19;
+  transform: scale(1.05);
+  transition: background-color 0.3s ease, color 0.3s ease,
+    transform 0.2s ease-in-out;
+}
+
+.services {
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #000;
+}
+
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.services h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.services h2 span {
+  color: #ff5b19;
+  border: 3px underline #ff5b19;
+}
+
+.services-box {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.service {
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  border: 3px dashed #eeeeee;
+}
+
+.service h3 {
+  font-size: 1.4rem;
+  color: #ff5b19;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.service p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.service:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+}
+
+.service i {
+  font-size: 2.5rem;
+  color: #ff5b19;
+  margin-bottom: 1rem;
+}
+.service:hover i {
+  color: #e14d10;
+  transition: color 0.3s ease;
+}
+
+.services-intro {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.about {
+  padding: 4rem 2rem;
+  color: #000;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.about-image img {
+  display: block;
+  width: 600px;
+  max-width: 100%;
+  height: auto;
+}
+
+.about-text {
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+  flex: 1;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.about-text h2 span {
+  color: #ff5b19;
+}
+
+.footer {
+  background-color: #000;
+  color: #eeeeee;
+  padding: 3rem 1.5rem 2rem;
+  text-align: center;
+}
+
+.footer h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.footer h3 span {
+  color: #eeeeee;
+  font-weight: 700;
+}
+
+.contact-info {
+  margin-bottom: 1.5rem;
+}
+
+.contact-info p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.contact-info i {
+  margin-right: 0.5rem;
+  color: #eeeeee;
+}
+
+.footer-note {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-top: 1rem;
+}
+
+.contact-info a {
+  color: #eeeeee;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.contact-info a:hover {
+  opacity: 0.8;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .nav-links ul {
+    display: flex;
+    flex-direction: column;
+    background-color: #eeeeee;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    padding: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    height: 100vh;
+    transition: right 0.3s ease;
+    z-index: 999;
+  }
+
+  .menu-toggle {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-right: 20px;
+    z-index: 1001;
+    position: relative;
+  }
+
+  #menu,
+  #close {
+    font-size: 1.6rem;
+    color: #ff5b19;
+    cursor: pointer;
+  }
+
+  .nav-links ul.show {
+    right: 0;
+  }
+
+  #close {
+    display: none;
+  }
+
+  .banner h1 {
+    font-size: 40px;
+  }
+
+  .banner-content p {
+    font-size: 16px;
+  }
+
+  .services-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image img {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .contact-btn {
+    all: unset;
+    color: #ff5b19;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .contact-btn:hover {
+    display: none !important;
+    content: none !important;
+  }
+}
