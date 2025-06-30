@@ -21,6 +21,10 @@ body {
   width: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 header {
   background-color: #ffffff;
   color: #ff5b19;
