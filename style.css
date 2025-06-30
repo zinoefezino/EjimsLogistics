@@ -285,10 +285,11 @@ header {
   color: #eeeeee;
   padding: 40px 20px 20px;
   text-align: center;
-  width: 100%;
+  width: 100vw;
   margin: 0;
-  border: 0;
+  border: none;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .footer h3 {
@@ -305,6 +306,7 @@ header {
 .contact-info {
   margin-bottom: 1.5rem;
   max-width: 600px;
+  width: 100%;
 }
 
 .contact-info p {
