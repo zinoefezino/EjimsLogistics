@@ -231,10 +231,9 @@
     </script>
 
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const form = document.getElementById("whatsapp-form");
-
-        form.addEventListener("submit", function (e) {
+      document
+        .getElementById("whatsapp-form")
+        .addEventListener("submit", function (e) {
           e.preventDefault();
 
           const name = document.getElementById("name").value.trim();
@@ -242,47 +241,42 @@
           const pickup = document.getElementById("pickup").value.trim();
           const delivery = document.getElementById("delivery").value.trim();
           const details = document.getElementById("details").value.trim();
-          const numberSelect = document.getElementById("whatsapp-number");
-          const selectedNumber = numberSelect.value;
+          const selectedNumber =
+            document.getElementById("whatsapp-number").value;
 
           if (!selectedNumber) {
-            alert("Please select a WhatsApp number to continue.");
+            alert("Please select a WhatsApp number.");
             return;
           }
 
           const message =
-            "🚚 Ejims Logistics - New Booking:/n" +
-            "Name: ${name}/n" +
-            "Phone: ${phone}/n" +
-            "Pickup: ${pickup}/n" +
-            "Delivery: ${delivery}/n" +
-            'Details: ${details || "N/A"}';
+            "🚚 *Ejims Logistics - New Booking*:%0A" +
+            "*Name:* ${name}%0A" +
+            "*Phone:* ${phone}%0A" +
+            "*Pickup Address:* ${pickup}%0A" +
+            "*Delivery Address:* ${delivery}%0A" +
+            '*Package Details:* ${details || "N/A"}';
 
           const whatsappURL =
-            "https://wa.me/" +
-            selectedNumber +
-            "?text=" +
-            encodeURIComponent(message);
+            "https://wa.me/${selectedNumber}?text=${encodeURIComponent(message)}";
 
-          const success = document.createElement("p");
-          success.textContent =
+          // Show temporary success message
+          const form = document.getElementById("whatsapp-form");
+          const successMessage = document.createElement("p");
+          successMessage.textContent =
             "✅ Booking created! Redirecting to WhatsApp...";
-          success.style.color = "green";
-          success.style.fontWeight = "bold";
-          success.style.marginTop = "10px";
-          success.setAttribute("id", "success-message");
+          successMessage.style.color = "green";
+          successMessage.style.fontWeight = "600";
+          successMessage.style.marginTop = "10px";
+          form.appendChild(successMessage);
 
-          const oldMsg = document.getElementById("success-message");
-          if (oldMsg) oldMsg.remove();
-          form.appendChild(success);
-
-          setTimeout(function () {
+          // Redirect after 2 seconds
+          setTimeout(() => {
             window.open(whatsappURL, "_blank");
             form.reset();
-            success.remove();
+            successMessage.remove();
           }, 2000);
         });
-      });
     </script>
   </body>
 </html>
