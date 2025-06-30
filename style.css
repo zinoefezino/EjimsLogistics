@@ -274,10 +274,8 @@ header {
 .footer {
   background-color: #000;
   color: #eeeeee;
-  padding: 3rem 1.5rem 2rem;
+  padding: 40px 20px;
   text-align: center;
-  width: 100%;
-  margin: 0;
 }
 
 .footer h3 {
