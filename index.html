@@ -241,60 +241,25 @@
     <script>
       document
         .getElementById("whatsapp-form")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
 
-          const name = document.getElementById("name").value.trim();
-          const phone = document.getElementById("phone").value.trim();
-          const pickup = document.getElementById("pickup").value.trim();
-          const dropoff = document.getElementById("dropoff").value.trim(); // New dropoff field
-          const details = document.getElementById("details").value.trim();
-          const selectedNumber =
+          const name = document.getElementById("name").value;
+          const phone = document.getElementById("phone").value;
+          const dropoff = document.getElementById("dropoff").value;
+          const pickup = document.getElementById("pickup").value;
+          const delivery = document.getElementById("delivery").value;
+          const details = document.getElementById("details").value;
+          const whatsappNumber =
             document.getElementById("whatsapp-number").value;
 
-          // Validate selection
-          if (!selectedNumber) {
-            alert("Please select a WhatsApp number");
-            return;
-          }
+          const message = `Hi, I would like to book a delivery:\n\nName: ${name}\nPickup Number: ${phone}\nDropoff Number: ${dropoff}\nPickup Location: ${pickup}\nDelivery Location: ${delivery}\nDetails: ${details}`;
 
-          // Construct the message using template literals
-          const message =
-            "🚚 *Ejims Logistics - New Booking*\n" +
-            "*Name:* ${name}\n" +
-            "*Phone:* ${phone}\n" +
-            "*Pickup:* ${pickup}\n" +
-            "*Dropoff:* ${dropoff}\n" +
-            '*Details:* ${details || "N/A"}';
+          const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+            message
+          )}`;
 
-          const encodedMessage = encodeURIComponent(message);
-          const whatsappUrl =
-            "https://wa.me/${selectedNumber}?text=${encodedMessage}";
-
-          // Debug: Log the URL to ensure it's correct
-          console.log("WhatsApp URL:", whatsappUrl);
-
-          // Show success message and redirect
-          const form = document.getElementById("whatsapp-form");
-          const successMessage = document.createElement("p");
-          successMessage.textContent =
-            "✅ Booking created! Redirecting to WhatsApp...";
-          successMessage.style.color = "green";
-          successMessage.style.fontWeight = "600";
-          successMessage.style.marginTop = "10px";
-
-          // Remove old message if it exists
-          const oldMsg = form.querySelector(".success-msg");
-          if (oldMsg) oldMsg.remove();
-
-          successMessage.classList.add("success-msg");
-          form.appendChild(successMessage);
-
-          setTimeout(() => {
-            window.open(whatsappUrl, "_blank"); // Open in new tab
-            form.reset(); // Clear the form
-            successMessage.remove(); // Remove success message
-          }, 1500);
+          window.open(whatsappUrl, "_blank");
         });
     </script>
   </body>
