@@ -276,6 +276,8 @@ header {
   color: #eeeeee;
   padding: 3rem 1.5rem 2rem;
   text-align: center;
+  width: 100%;
+  margin: 0;
 }
 
 .footer h3 {
