@@ -276,10 +276,12 @@ header {
 .footer {
   background-color: #000;
   color: #eeeeee;
-  padding: 40px 0;
+  padding: 40px 20px 20px;
   text-align: center;
   width: 100%;
   margin: 0;
+  border: 0;
+  box-sizing: border-box;
 }
 
 .footer h3 {
@@ -330,20 +332,14 @@ header {
 hr {
   border: 0;
   border-top: 1px solid #eeeeee;
-  margin: 15px auto;
-  width: 600px;
+  margin: 30px auto;
+  width: 80%;
 }
 
 html,
 body {
   overflow-x: hidden;
 }
-/* 
-.booking-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 1rem;
-} */
 
 .booking {
   background-color: #eeeeee;
