@@ -375,6 +375,28 @@ label {
   margin-bottom: 5px;
 }
 
+select {
+  appearance: none; /* Remove default OS styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-color: #eeeeee;
+  color: #000;
+  padding: 10px 15px;
+  border: 2px solid #ff5b19;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+select:hover,
+select:focus {
+  border-color: #e14d10;
+}
+
 .footer {
   background-color: #000;
   color: #eeeeee;
