@@ -325,6 +325,53 @@ body {
   overflow-x: hidden;
 }
 
+.booking {
+  background-color: #ffffff;
+  color: #000;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.booking h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #ff5b19;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: auto;
+}
+
+.booking-form input,
+.booking-form textarea {
+  padding: 12px 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  resize: none;
+}
+
+.booking-form button {
+  padding: 12px;
+  background-color: #ff5b19;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.booking-form button:hover {
+  background-color: #e14d10;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
   .nav-links ul {
