@@ -210,5 +210,41 @@
         });
       });
     </script>
+
+<script>
+  document.getElementById("whatsapp-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const pickup = document.getElementById("pickup").value.trim();
+    const delivery = document.getElementById("delivery").value.trim();
+    const details = document.getElementById("details").value.trim();
+
+    const message = `🚚 *Ejims Logistics - New Booking*:%0A
+*Name:* ${name}%0A
+*Pickup Address:* ${pickup}%0A
+*Delivery Address:* ${delivery}%0A
+*Package Details:* ${details || "N/A"}`;
+
+    const phone = "2347041454768";
+    const whatsappLink = https://wa.me/${phone}?text=${message};
+
+    // Show success message
+    const form = document.getElementById("whatsapp-form");
+    const successMessage = document.createElement("p");
+    successMessage.textContent = "✅ Booking created! Redirecting to WhatsApp...";
+    successMessage.style.color = "green";
+    successMessage.style.fontWeight = "600";
+    successMessage.style.marginTop = "10px";
+    form.appendChild(successMessage);
+
+    // Delay then redirect
+    setTimeout(() => {
+      window.open(whatsappLink, "_blank");
+      form.reset();
+      successMessage.remove();
+    }, 2000);
+  });
+</script>
   </body>
 </html>

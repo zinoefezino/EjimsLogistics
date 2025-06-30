@@ -371,13 +371,13 @@ body {
 .booking-form label {
   text-align: left;
   font-weight: 500;
-  color: #eeeeee;
+  color: #ff5b19;
 }
 
 .booking-form input,
 .booking-form textarea {
   padding: 12px 16px;
-  border: 1px solid #ccc;
+  border: 1px solid #eeeeee;
   border-radius: 6px;
   font-family: inherit;
   font-size: 1rem;
