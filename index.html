@@ -147,7 +147,7 @@
 
           <label for="whatsapp-number">Choose Delivery Number:</label>
           <select id="whatsapp-number" required>
-            <option value="" disabled selected>Select a number</option>
+            <option value="">Select a number</option>
             <option value="2347041454768">+234 704 145 4768</option>
             <option value="2349138655911">+234 913 865 5911</option>
           </select>
@@ -250,11 +250,11 @@
           }
 
           const message =
-            "🚚 *Ejims Logistics - New Booking*:%0A" +
-            "*Name:* ${name}%0A" +
-            "*Phone:* ${phone}%0A" +
-            "*Pickup Address:* ${pickup}%0A" +
-            "*Delivery Address:* ${delivery}%0A" +
+            "🚚 *Ejims Logistics - New Booking*:/n" +
+            "*Name:* ${name}/n" +
+            "*Phone:* ${phone}/n" +
+            "*Pickup Address:* ${pickup}/n" +
+            "*Delivery Address:* ${delivery}/n" +
             '*Package Details:* ${details || "N/A"}';
 
           const url =
