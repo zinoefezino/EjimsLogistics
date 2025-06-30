@@ -211,38 +211,26 @@
       });
     </script>
 
-<script>
-  document.getElementById("whatsapp-form").addEventListener("submit", function (e) {
-    e.preventDefault();
+    <script>
+      document.getElementById("whatsapp-form").addEventListener("submit", function (event) {
+        event.preventDefault();
 
-    const name = document.getElementById("name").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const pickup = document.getElementById("pickup").value.trim();
-    const delivery = document.getElementById("delivery").value.trim();
-    const details = document.getElementById("details").value.trim();
+        const name = document.getElementById("name").value;
+        const phone = document.getElementById("phone").value;
+        const pickup = document.getElementById("pickup").value;
+        const delivery = document.getElementById("delivery").value;
+        const details = document.getElementById("details").value;
 
-    const message = 🚚 *Ejims Logistics - New Booking*:%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Pickup Address:* ${pickup}%0A*Delivery Address:* ${delivery}%0A*Package Details:* ${details || "N/A"};
+        const whatsappMessage = `Hi Ejims Logistics, I want to book a delivery.\n\nName: ${name}\nPhone: ${phone}\nPickup: ${pickup}\nDelivery: ${delivery}\nDetails: ${details}`;
 
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappLink = https://wa.me/2347041454768?text=${encodedMessage};
+        const whatsappUrl = `https://wa.me/2347041454768?text=${encodeURIComponent(whatsappMessage)}`;
+        
+        window.open(whatsappUrl, "_blank");
+      });
 
-    // Show success message
-    const form = document.getElementById("whatsapp-form");
-    const successMessage = document.createElement("p");
-    successMessage.textContent = "✅ Booking created! Redirecting to WhatsApp...";
-    successMessage.style.color = "green";
-    successMessage.style.fontWeight = "600";
-    successMessage.style.marginTop = "10px";
-    form.appendChild(successMessage);
+    </script>
+       
 
-    // Delay then redirect
-    setTimeout(() => {
-      window.open(whatsappLink, "_blank");
-      form.reset();
-      successMessage.remove();
-    }, 2000);
-  });
-</script>
     
   </body>
 </html>
