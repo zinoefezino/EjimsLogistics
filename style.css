@@ -371,7 +371,7 @@ body {
 .booking-form label {
   text-align: left;
   font-weight: 500;
-  color: #444;
+  color: #eeeeee;
 }
 
 .booking-form input,
@@ -481,5 +481,9 @@ body {
   .contact-btn:hover {
     display: none !important;
     content: none !important;
+  }
+
+  body {
+    overflow-x: hidden;
   }
 }
