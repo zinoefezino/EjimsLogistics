@@ -124,6 +124,9 @@
           <label for="phone">Pickup Number:</label>
           <input type="tel" id="phone" placeholder=" Your Phone" required />
 
+          <label for="phone">Drop off Number:</label>
+          <input type="tel" id="dropoff" placeholder=" Your Phone" required />
+
           <label for="pickup">Pickup Location:</label>
           <input
             type="text"
@@ -239,6 +242,7 @@
           const name = document.getElementById("name").value.trim();
           const phone = document.getElementById("phone").value.trim();
           const pickup = document.getElementById("pickup").value.trim();
+          const dropoff = document.getElementById("dropoff").value.trim();
           const delivery = document.getElementById("delivery").value.trim();
           const details = document.getElementById("details").value.trim();
           const selectedNumber =
@@ -255,6 +259,7 @@
             "*Phone:* ${phone}\n" +
             "*Pickup:* ${pickup}\n" +
             "*Delivery:* ${delivery}\n" +
+            "*Dropoff:* ${dropoff}\n" +
             '*Details:* ${details || "N/A"}';
 
           const encodedMessage = encodeURIComponent(message);
