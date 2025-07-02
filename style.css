@@ -168,8 +168,7 @@ header {
   color: #ffffff;
   border-color: #ff5b19;
   transform: scale(1.05);
-  transition: background-color 0.3s ease, color 0.3s ease,
-    transform 0.2s ease-in-out;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .services {

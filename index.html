@@ -2,10 +2,19 @@
 <html lang="en" style="overflow-x: hidden">
   <head>
     <script>
-      // Prevent scroll position from being retained on page reload
-      window.onbeforeunload = function () {
-        window.scrollTo(0, 0);
-      };
+      document.addEventListener("DOMContentLoaded", function () {
+        // Reset scroll to top on page load
+        window.onload = function () {
+          if (window.location.hash) {
+            window.history.pushState(
+              "",
+              document.title,
+              window.location.pathname
+            ); // Remove hash
+          }
+          window.scrollTo(0, 0); // Scroll to top
+        };
+      });
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
