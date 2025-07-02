@@ -536,11 +536,6 @@ hr {
     display: inline-block;
   }
 
-  .contact-btn:hover {
-    display: none !important;
-    content: none !important;
-  }
-
   body {
     overflow-x: hidden;
   }
