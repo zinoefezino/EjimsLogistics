@@ -528,12 +528,24 @@ hr {
     max-width: 400px;
   }
 
-  .contact-btn {
+  /* .contact-btn {
     all: unset;
     color: #ff5b19;
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
+  } */
+
+  .contact-btn {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 2px solid #ff5b19;
+    text-decoration: none;
+    color: #ff5b19;
+    background-color: transparent;
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease;
+    display: inline-block;
+    cursor: pointer;
   }
 
   body {
