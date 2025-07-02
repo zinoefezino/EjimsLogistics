@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" style="overflow-x: hidden">
   <head>
+    <script>
+      // Prevent scroll position from being retained on page reload
+      window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+      };
+    </script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
@@ -255,13 +262,6 @@
 
           window.open(whatsappUrl, "_blank");
         });
-    </script>
-
-    <script>
-      // Prevent browser from keeping #hash scroll position after reload
-      if (window.location.hash) {
-        history.replaceState(null, null, window.location.pathname);
-      }
     </script>
   </body>
 </html>
