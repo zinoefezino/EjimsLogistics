@@ -206,7 +206,7 @@ header {
   border-radius: 10px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
-  border: 3px dashed #eeeeee;
+  border: 3px solid #eeeeee;
 }
 
 .service h3 {
